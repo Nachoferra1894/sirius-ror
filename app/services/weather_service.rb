@@ -21,7 +21,7 @@ class WeatherService
         conditions: weather_description
       }
     else
-      raise StandardError, "Error fetching weather data: #{response.code} - #{response.message}"
+      raise StandardError, "Error fetching weather data: #{response.code} - #{response}"
     end
   end
 end

@@ -45,6 +45,9 @@ gem 'bootsnap', require: false
 # To fetch data from API
 gem 'httparty'
 
+# To mock API calls
+gem "webmock"
+
 
 # Use Sass to process CSS
 # gem "sassc-rails"
