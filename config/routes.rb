@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "home#index"
+
+  get 'weather/get_weather', to: 'weather#get_weather'
 end
