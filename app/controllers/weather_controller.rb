@@ -1,3 +1,5 @@
+require 'dotenv/load'
+
 class WeatherController < ApplicationController
     def get_weather
         zip_code = params[:zip_code]

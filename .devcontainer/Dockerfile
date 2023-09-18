@@ -16,3 +16,22 @@ ENV RAILS_DEVELOPMENT_HOSTS=".githubpreview.dev,.preview.app.github.dev,.app.git
 
 # [Optional] Uncomment this line to install global node packages.
 # RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g <your-package-here>" 2>&1
+
+# #Custom ruby image
+# # Use a Ruby base image with your desired Ruby version
+# FROM ruby:3.2.2
+
+# # Set the working directory inside the container
+# WORKDIR /app
+
+# # Copy your Rails application code into the container
+# COPY . .
+
+# # Install dependencies using Bundler
+# RUN bundle install
+
+# # Expose the port your Rails app will run on (adjust as needed)
+# EXPOSE 3000
+
+# # Command to start your Rails API (adjust as needed)
+# CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]

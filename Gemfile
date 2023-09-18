@@ -48,6 +48,9 @@ gem 'httparty'
 # To mock API calls
 gem "webmock"
 
+# To load environment variables
+gem 'dotenv-rails', groups: [:development, :test]
+
 
 # Use Sass to process CSS
 # gem "sassc-rails"
