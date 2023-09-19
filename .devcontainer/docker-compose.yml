@@ -5,14 +5,15 @@ services:
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
+      # volumes:
+      # - ../..:/workspaces:cached
 
-    volumes:
-      - ../..:/workspaces:cached
-
-    # Overrides default command so things don't shut down after the process ends.
-    command: sleep infinity
+      # Overrides default command so things don't shut down after the process ends.
+      # command: sleep infinity
     env_file:
       - ../.env
+    ports:
+      - 3000:3000
     # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
     # network_mode: service:app
     # Use "forwardPorts" in **devcontainer.json** to forward an app port locally.
@@ -24,6 +25,8 @@ services:
     # network_mode: service:app
     volumes:
       - redis-data:/data
+    ports:
+      - 6379:6379
     # Add "forwardPorts": ["6379"] to **devcontainer.json** to forward Redis locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
 

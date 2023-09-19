@@ -18,10 +18,17 @@ require 'action_cable/engine'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
 module SiriusRor
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    config.cache_store = :redis_store, {
+      host: 'redis',
+      port: 6379,
+      db: 0,
+      expires_in: 1.hour
+    }
 
     # Configuration for the application, engines, and railties goes here.
     #
